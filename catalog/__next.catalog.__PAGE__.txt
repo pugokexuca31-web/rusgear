@@ -1,0 +1,6 @@
+1:"$Sreact.fragment"
+2:"$Sreact.suspense"
+3:I[19248,["/rusgear/_next/static/chunks/1wlg9vjsyg_sp.js","/rusgear/_next/static/chunks/02a0yteei2tsc.js","/rusgear/_next/static/chunks/2dtojp127zcru.js"],"CatalogClient"]
+4:I[85308,["/rusgear/_next/static/chunks/1wlg9vjsyg_sp.js","/rusgear/_next/static/chunks/02a0yteei2tsc.js"],"OutletBoundary"]
+0:{"rsc":["$","$1","c",{"children":[["$","$2",null,{"fallback":["$","div",null,{"className":"container-rg py-12"}],"children":["$","$L3",null,{}]}],[["$","script","script-0",{"src":"/rusgear/_next/static/chunks/2dtojp127zcru.js","async":true}]],["$","$L4",null,{"children":["$","$2",null,{"name":"Next.MetadataOutlet","children":"$@5"}]}]]}],"isPartial":false,"staleTime":300,"varyParams":null,"buildId":"P1tuMVhL_K_amSfYyYTZ6"}
+5:null

@@ -1,0 +1,110 @@
+1:"$Sreact.fragment"
+2:I[37947,["/rusgear/_next/static/chunks/1wlg9vjsyg_sp.js","/rusgear/_next/static/chunks/02a0yteei2tsc.js","/rusgear/_next/static/chunks/1gar84x52oztb.js"],""]
+3:I[64510,["/rusgear/_next/static/chunks/1wlg9vjsyg_sp.js","/rusgear/_next/static/chunks/02a0yteei2tsc.js","/rusgear/_next/static/chunks/1gar84x52oztb.js"],"ProductDetail"]
+f:I[85308,["/rusgear/_next/static/chunks/1wlg9vjsyg_sp.js","/rusgear/_next/static/chunks/02a0yteei2tsc.js"],"OutletBoundary"]
+10:"$Sreact.suspense"
+4:T10d5,Сумка для магазинов АК-2 ССО MOLLE с бесшумной застёжкой и утяжкой
+
+Тактический подсумок для размещения двух магазинов к автомату Калашникова. Предназначена для установки на плитник, чехол для бронеплит или другое снаряжение с MOLLE системой. Обеспечивает надёжную фиксацию магазинов и быстрый доступ без шумовых факторов.
+
+⸻
+
+Преимущества по сравнению с аналогами
+
+Конструкция с бесшумной застёжкой и внутренней утяжкой позволяет использовать подсумок в условиях, где критичен контроль шума. Совместима с большинством разгрузочных систем и тактических бронежилетов. Универсальна по размещению и не ограничивает движение при активной работе.
+
+⸻
+
+Конструкция и регулировка
+
+• вертикальная посадка на снаряжении
+• крепление через MOLLE / PALS интерфейс
+• фиксация магазинов внутренней утяжкой
+• бесшумная застёжка без металлических элементов
+• стабильное удержание магазинов при беге и смене положений
+• равномерное распределение веса на плоскости крепления
+
+⸻
+
+Совместимость и защита
+
+• совместима с тактическим бронежилетом, плитником и чехлом для бронеплит
+• крепление: MOLLE система (при необходимости подсумок можно устанавливать не только на Molle основу, но и на ремни, сделав из строп петли нужного размера)
+• рассчитана на магазины АК стандартных габаритов
+
+⸻
+
+Основные элементы конструкции
+
+Основной корпус подсумка
+
+• вместимость: 2 магазина АК
+• жёстко формированный корпус
+• защита магазинов от выпадения и смещения
+• удобство работы одной рукой
+
+Бесшумная застёжка
+
+• текстильная система фиксации
+• отсутствие липучки и металлических кнопок
+• снижение шумовой заметности при открытии
+
+Внутренняя утяжка
+
+• шнур с фиксатором
+• регулируемая плотность удержания магазинов
+• адаптация под магазины с разной степенью наполнения
+
+⸻
+
+Материалы
+
+• ткань: оригинальная Cordura® Invista
+• усиленная стропа
+• пластиковая фурнитура
+• высокая устойчивость к истиранию и разрывным нагрузкам
+
+⸻
+
+Цвета
+
+• Мультикам (MULTIKAM)
+• ATACS-FG
+• Олива
+• ЕМР
+
+⸻
+
+Комплектация
+
+• сумка для магазинов АК-2 — 1 шт
+
+⸻
+
+Назначение
+
+• служебное применение
+• тактические задачи
+• учебно-тренировочное использование
+• гражданское применение (стрелковые тренировки, страйкбол)
+
+⸻
+
+О магазине RUSGEAR
+
+RUSGEAR — мультибренд профессиональной экипировки.
+
+Мы собрали проверенные бренды и рабочие решения для реальных задач.
+
+Выбор тех, кому важны надёжность, функциональность и результат.0:{"rsc":["$","$1","c",{"children":[["$","div",null,{"className":"container-rg py-10","children":[["$","nav",null,{"className":"mb-6 text-xs uppercase tracking-wide text-ink-400","children":[["$","$L2",null,{"href":"/","className":"hover:text-accent-red","children":"Главная"}],["$","span",null,{"className":"mx-2","children":"/"}],["$","$L2",null,{"href":"/catalog","className":"hover:text-accent-red","children":"Каталог"}],["$","span",null,{"className":"mx-2","children":"/"}],["$","span",null,{"className":"text-ink-700","children":"Сумка АК 2 MOLLE с бесшумной застёжкой и утяжкой"}]]}],["$","$L3",null,{"product":{"id":"8","slug":"sumka-ak-2-molle","sku":"RG-AC-AK2-MOLLE","name":"Сумка АК 2 MOLLE с бесшумной застёжкой и утяжкой","description":"$4","price":"398000","brand":{"slug":"sso","name":"ССО"},"categories":["podsumok"],"categorySlug":"podsumok","attributes":{"Тип":"Подсумок","Длина, см":"10","Высота, см":"22.5","Ширина, см":"7.5","Тип застежки":"Клапан","Материал":"Кордура","Страна-изготовитель":"Россия","Специальные отделения":"Внутренний карман, Отделение-органайзер","Особенности конструкции сумки":"Разделитель в главном отделении","Кол-во внутренних отделений":"1","Целевая аудитория":"Взрослая"},"variants":[{"id":"multikam","sku":"AK2-MULTIKAM","name":"Мультикам","attributes":{"Цвет":"Мультикам"},"price":"398000","inStock":true,"availableQty":20},{"id":"atacs-fg","sku":"AK2-ATACS-FG","name":"ATACS-FG","attributes":{"Цвет":"ATACS-FG"},"price":"398000","inStock":true,"availableQty":20},{"id":"olive","sku":"AK2-OLIVE","name":"Олива","attributes":{"Цвет":"Олива"},"price":"398000","inStock":true,"availableQty":20},{"id":"emp","sku":"AK2-EMP","name":"ЕМР","attributes":{"Цвет":"ЕМР"},"price":"398000","inStock":true,"availableQty":20}],"media":[{"url":"/products/multikam1.webp","type":"image","alt":"Сумка АК 2 MOLLE — Мультикам","isPrimary":true},{"url":"/products/multikam2.webp","type":"image","alt":"Сумка АК 2 MOLLE — Мультикам"},{"url":"/products/multikam3.webp","type":"image","alt":"Сумка АК 2 MOLLE — Мультикам"},{"url":"/products/multikam4.webp","type":"image","alt":"Сумка АК 2 MOLLE — Мультикам"},{"url":"/products/multikam5.webp","type":"image","alt":"Сумка АК 2 MOLLE — Мультикам"},{"url":"/products/atacs-fg1.webp","type":"image","alt":"Сумка АК 2 MOLLE — ATACS-FG"},{"url":"/products/atacs-fg2.webp","type":"image","alt":"Сумка АК 2 MOLLE — ATACS-FG"},{"url":"/products/atacs-fg3.webp","type":"image","alt":"Сумка АК 2 MOLLE — ATACS-FG"},{"url":"/products/olive1.webp","type":"image","alt":"Сумка АК 2 MOLLE — Олива"},{"url":"/products/emp1.webp","type":"image","alt":"Сумка АК 2 MOLLE — ЕМР"}],"inStock":true,"availableQty":80}}],"$L5"]}],["$L6"],"$L7"]}],"isPartial":false,"staleTime":300,"varyParams":null,"buildId":"P1tuMVhL_K_amSfYyYTZ6"}
+5:["$","div",null,{"className":"mt-16","children":[["$","h2",null,{"className":"mb-6 text-xl font-extrabold uppercase tracking-tight","children":"Описание"}],["$","div",null,{"className":"max-w-3xl space-y-8","children":[["$","div","0",{"className":"space-y-3","children":[["$","h3","h-0",{"className":"text-base font-bold uppercase tracking-wide text-ink-900","children":"Сумка для магазинов АК-2 ССО MOLLE с бесшумной застёжкой и утяжкой"}],["$","p","p-1",{"className":"text-base leading-relaxed text-ink-600","children":"Тактический подсумок для размещения двух магазинов к автомату Калашникова. Предназначена для установки на плитник, чехол для бронеплит или другое снаряжение с MOLLE системой. Обеспечивает надёжную фиксацию магазинов и быстрый доступ без шумовых факторов."}]]}],["$","div","1",{"className":"space-y-3","children":[["$","h3","h-0",{"className":"text-base font-bold uppercase tracking-wide text-ink-900","children":"Преимущества по сравнению с аналогами"}],["$","p","p-1",{"className":"text-base leading-relaxed text-ink-600","children":"Конструкция с бесшумной застёжкой и внутренней утяжкой позволяет использовать подсумок в условиях, где критичен контроль шума. Совместима с большинством разгрузочных систем и тактических бронежилетов. Универсальна по размещению и не ограничивает движение при активной работе."}]]}],["$","div","2",{"className":"space-y-3","children":[["$","h3","h-0",{"className":"text-base font-bold uppercase tracking-wide text-ink-900","children":"Конструкция и регулировка"}],["$","ul","ul-1",{"className":"list-disc space-y-1.5 pl-5 text-base leading-relaxed text-ink-600 marker:text-accent-red","children":[["$","li","0",{"children":"вертикальная посадка на снаряжении"}],["$","li","1",{"children":"крепление через MOLLE / PALS интерфейс"}],["$","li","2",{"children":"фиксация магазинов внутренней утяжкой"}],["$","li","3",{"children":"бесшумная застёжка без металлических элементов"}],["$","li","4",{"children":"стабильное удержание магазинов при беге и смене положений"}],["$","li","5",{"children":"равномерное распределение веса на плоскости крепления"}]]}]]}],["$","div","3",{"className":"space-y-3","children":[["$","h3","h-0",{"className":"text-base font-bold uppercase tracking-wide text-ink-900","children":"Совместимость и защита"}],["$","ul","ul-1",{"className":"list-disc space-y-1.5 pl-5 text-base leading-relaxed text-ink-600 marker:text-accent-red","children":[["$","li","0",{"children":"совместима с тактическим бронежилетом, плитником и чехлом для бронеплит"}],["$","li","1",{"children":"крепление: MOLLE система (при необходимости подсумок можно устанавливать не только на Molle основу, но и на ремни, сделав из строп петли нужного размера)"}],["$","li","2",{"children":"рассчитана на магазины АК стандартных габаритов"}]]}]]}],["$","div","4",{"className":"space-y-3","children":[["$","h3","h-0",{"className":"text-base font-bold uppercase tracking-wide text-ink-900","children":"Основные элементы конструкции"}],["$","p","p-1",{"className":"text-base leading-relaxed text-ink-600","children":"Основной корпус подсумка"}],["$","ul","ul-2",{"className":"list-disc space-y-1.5 pl-5 text-base leading-relaxed text-ink-600 marker:text-accent-red","children":[["$","li","0",{"children":"вместимость: 2 магазина АК"}],["$","li","1",{"children":"жёстко формированный корпус"}],["$","li","2",{"children":"защита магазинов от выпадения и смещения"}],["$","li","3",{"children":"удобство работы одной рукой"}]]}],["$","p","p-3",{"className":"text-base leading-relaxed text-ink-600","children":"Бесшумная застёжка"}],["$","ul","ul-4",{"className":"list-disc space-y-1.5 pl-5 text-base leading-relaxed text-ink-600 marker:text-accent-red","children":[["$","li","0",{"children":"текстильная система фиксации"}],["$","li","1",{"children":"отсутствие липучки и металлических кнопок"}],["$","li","2",{"children":"снижение шумовой заметности при открытии"}]]}],"$L8","$L9"]}],"$La","$Lb","$Lc","$Ld","$Le"]}]]}]
+6:["$","script","script-0",{"src":"/rusgear/_next/static/chunks/1gar84x52oztb.js","async":true}]
+7:["$","$Lf",null,{"children":["$","$10",null,{"name":"Next.MetadataOutlet","children":"$@11"}]}]
+8:["$","p","p-5",{"className":"text-base leading-relaxed text-ink-600","children":"Внутренняя утяжка"}]
+9:["$","ul","ul-6",{"className":"list-disc space-y-1.5 pl-5 text-base leading-relaxed text-ink-600 marker:text-accent-red","children":[["$","li","0",{"children":"шнур с фиксатором"}],["$","li","1",{"children":"регулируемая плотность удержания магазинов"}],["$","li","2",{"children":"адаптация под магазины с разной степенью наполнения"}]]}]
+a:["$","div","5",{"className":"space-y-3","children":[["$","h3","h-0",{"className":"text-base font-bold uppercase tracking-wide text-ink-900","children":"Материалы"}],["$","ul","ul-1",{"className":"list-disc space-y-1.5 pl-5 text-base leading-relaxed text-ink-600 marker:text-accent-red","children":[["$","li","0",{"children":"ткань: оригинальная Cordura® Invista"}],["$","li","1",{"children":"усиленная стропа"}],["$","li","2",{"children":"пластиковая фурнитура"}],["$","li","3",{"children":"высокая устойчивость к истиранию и разрывным нагрузкам"}]]}]]}]
+b:["$","div","6",{"className":"space-y-3","children":[["$","h3","h-0",{"className":"text-base font-bold uppercase tracking-wide text-ink-900","children":"Цвета"}],["$","ul","ul-1",{"className":"list-disc space-y-1.5 pl-5 text-base leading-relaxed text-ink-600 marker:text-accent-red","children":[["$","li","0",{"children":"Мультикам (MULTIKAM)"}],["$","li","1",{"children":"ATACS-FG"}],["$","li","2",{"children":"Олива"}],["$","li","3",{"children":"ЕМР"}]]}]]}]
+c:["$","div","7",{"className":"space-y-3","children":[["$","h3","h-0",{"className":"text-base font-bold uppercase tracking-wide text-ink-900","children":"Комплектация"}],["$","ul","ul-1",{"className":"list-disc space-y-1.5 pl-5 text-base leading-relaxed text-ink-600 marker:text-accent-red","children":[["$","li","0",{"children":"сумка для магазинов АК-2 — 1 шт"}]]}]]}]
+d:["$","div","8",{"className":"space-y-3","children":[["$","h3","h-0",{"className":"text-base font-bold uppercase tracking-wide text-ink-900","children":"Назначение"}],["$","ul","ul-1",{"className":"list-disc space-y-1.5 pl-5 text-base leading-relaxed text-ink-600 marker:text-accent-red","children":[["$","li","0",{"children":"служебное применение"}],["$","li","1",{"children":"тактические задачи"}],["$","li","2",{"children":"учебно-тренировочное использование"}],["$","li","3",{"children":"гражданское применение (стрелковые тренировки, страйкбол)"}]]}]]}]
+e:["$","div","9",{"className":"space-y-3","children":[["$","h3","h-0",{"className":"text-base font-bold uppercase tracking-wide text-ink-900","children":"О магазине RUSGEAR"}],["$","p","p-1",{"className":"text-base leading-relaxed text-ink-600","children":"RUSGEAR — мультибренд профессиональной экипировки."}],["$","p","p-2",{"className":"text-base leading-relaxed text-ink-600","children":"Мы собрали проверенные бренды и рабочие решения для реальных задач."}],["$","p","p-3",{"className":"text-base leading-relaxed text-ink-600","children":"Выбор тех, кому важны надёжность, функциональность и результат."}]]}]
+11:null
