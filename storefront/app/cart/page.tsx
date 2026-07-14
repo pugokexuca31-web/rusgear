@@ -1,13 +1,15 @@
 'use client';
 
 import Link from 'next/link';
+import { useState } from 'react';
 import { useCart } from '@/components/cart/CartProvider';
 import { Button, ButtonLink } from '@/components/ui/Button';
 import { ProductPlaceholder } from '@/components/ui/ProductPlaceholder';
 import { formatPrice } from '@/lib/format';
 
 export default function CartPage() {
-  const { items, subtotal, setQty, remove, clear } = useCart();
+  const { items, subtotal, promo, setPromo, setQty, remove, clear } = useCart();
+  const [promoInput, setPromoInput] = useState('');
 
   if (items.length === 0) {
     return (
@@ -74,6 +76,45 @@ export default function CartPage() {
             <span className="text-ink-500">Доставка</span>
             <span className="text-ink-400">рассчитается при оформлении</span>
           </div>
+
+          {/* Промокод */}
+          <div className="mt-5 border-t hairline pt-4">
+            <label className="text-xs font-bold uppercase tracking-widest text-ink-500">Промокод</label>
+            {promo ? (
+              <div className="mt-2 flex items-center justify-between gap-2 border border-brand-dark/30 bg-ink-50 px-3 py-2.5 text-sm">
+                <span className="font-semibold uppercase tracking-wide text-ink-900">{promo}</span>
+                <button
+                  type="button"
+                  onClick={() => { setPromo(''); setPromoInput(''); }}
+                  className="text-xs uppercase tracking-wide text-ink-400 hover:text-accent-red"
+                >
+                  Убрать
+                </button>
+              </div>
+            ) : (
+              <form
+                onSubmit={(e) => {
+                  e.preventDefault();
+                  const v = promoInput.trim();
+                  if (v) setPromo(v.toUpperCase());
+                }}
+                className="mt-2 flex gap-2"
+              >
+                <input
+                  value={promoInput}
+                  onChange={(e) => setPromoInput(e.target.value)}
+                  placeholder="Введите промокод"
+                  aria-label="Промокод"
+                  className="h-11 w-full flex-1 border hairline px-4 text-sm uppercase outline-none focus:border-ink-900"
+                />
+                <Button type="submit" variant="outline" className="h-11 shrink-0 px-4">Применить</Button>
+              </form>
+            )}
+            <p className="mt-2 text-xs text-ink-400">
+              Скидку по промокоду рассчитает система при оформлении.
+            </p>
+          </div>
+
           <div className="mt-5 flex items-baseline justify-between border-t hairline pt-4">
             <span className="text-sm font-bold uppercase">К оплате</span>
             <span className="font-heading text-2xl font-extrabold">{formatPrice(subtotal)}</span>

@@ -13,9 +13,8 @@ import { formatPrice } from '@/lib/format';
  * Регистрация/ЛК — Фаза 2.
  */
 export default function CheckoutPage() {
-  const { items, subtotal, clear } = useCart();
+  const { items, subtotal, promo, clear } = useCart();
   const [placed, setPlaced] = useState(false);
-  const [promo, setPromo] = useState('');
 
   if (placed) {
     return (
@@ -101,19 +100,22 @@ export default function CheckoutPage() {
             ))}
           </ul>
           <div className="mt-5 border-t hairline pt-4">
-            <label className="text-xs font-bold uppercase tracking-widest text-ink-500">Промокод</label>
-            <div className="mt-2 flex gap-2">
-              <input
-                value={promo}
-                onChange={(e) => setPromo(e.target.value)}
-                placeholder="Введите промокод"
-                className={`${input} h-11 flex-1 uppercase`}
-              />
-              <Button type="button" variant="outline" className="h-11 shrink-0 px-4">Применить</Button>
+            <div className="flex items-center justify-between gap-2">
+              <span className="text-xs font-bold uppercase tracking-widest text-ink-500">Промокод</span>
+              <Link href="/cart" className="text-xs uppercase tracking-wide text-ink-400 hover:text-accent-red">
+                {promo ? 'Изменить' : 'Добавить в корзине'}
+              </Link>
             </div>
-            <p className="mt-2 text-xs text-ink-400">
-              Скидку по промокоду рассчитает система при оформлении.
-            </p>
+            {promo ? (
+              <div className="mt-2 flex items-center justify-between gap-2 border border-brand-dark/30 bg-ink-50 px-3 py-2.5 text-sm">
+                <span className="font-semibold uppercase tracking-wide text-ink-900">{promo}</span>
+                <span className="text-xs text-ink-400">применён</span>
+              </div>
+            ) : (
+              <p className="mt-2 text-xs text-ink-400">
+                Промокод можно ввести в корзине — скидку рассчитает система при оформлении.
+              </p>
+            )}
           </div>
           <div className="mt-5 flex items-baseline justify-between border-t hairline pt-4">
             <span className="text-sm font-bold uppercase">Итого</span>

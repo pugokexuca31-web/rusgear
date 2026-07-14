@@ -13,6 +13,16 @@ const FLAGS = [
   { key: 'new', label: 'Новинки' },
 ] as const;
 
+const SORT_OPTIONS = [
+  { key: 'popular', label: 'По популярности' },
+  { key: 'price-asc', label: 'Сначала дешевле' },
+  { key: 'price-desc', label: 'Сначала дороже' },
+  { key: 'new', label: 'Сначала новинки' },
+  { key: 'name', label: 'По названию (А–Я)' },
+] as const;
+
+const DEFAULT_SORT = 'popular';
+
 export function CatalogClient() {
   const [filtersOpen, setFiltersOpen] = useState(false);
   const params = useSearchParams();
@@ -31,13 +41,30 @@ export function CatalogClient() {
   const brandsKey = brands.join(',');
   const colorsKey = colors.join(',');
   const sizesKey = sizes.join(',');
+  const sort = params.get('sort') || DEFAULT_SORT;
 
   const categories = CATEGORIES;
-  const products = useMemo(
+  const filtered = useMemo(
     () => filterMock({ category, q, featured, new: isNew, sale, inStock, brands, colors, sizes }),
     // eslint-disable-next-line react-hooks/exhaustive-deps
     [category, q, featured, isNew, sale, inStock, brandsKey, colorsKey, sizesKey],
   );
+
+  const products = useMemo(() => {
+    const list = filtered.slice();
+    switch (sort) {
+      case 'price-asc':
+        return list.sort((a, b) => Number(a.price) - Number(b.price));
+      case 'price-desc':
+        return list.sort((a, b) => Number(b.price) - Number(a.price));
+      case 'new':
+        return list.sort((a, b) => Number(!!b.isNew) - Number(!!a.isNew));
+      case 'name':
+        return list.sort((a, b) => a.name.localeCompare(b.name, 'ru'));
+      default:
+        return list; // popular — исходный порядок
+    }
+  }, [filtered, sort]);
 
   const activeCat = categories.find((c) => c.slug === category);
   const title = q
@@ -85,6 +112,15 @@ export function CatalogClient() {
       pushParams((p) => {
         if (p.get(key) === '1') p.delete(key);
         else p.set(key, '1');
+      }),
+    [pushParams],
+  );
+
+  const setSort = useCallback(
+    (value: string) =>
+      pushParams((p) => {
+        if (value === DEFAULT_SORT) p.delete('sort');
+        else p.set('sort', value);
       }),
     [pushParams],
   );
@@ -256,9 +292,26 @@ export function CatalogClient() {
         <span className="text-ink-700">{title}</span>
       </nav>
 
-      <div className="mb-6 flex items-end justify-between gap-4 md:mb-8">
+      <div className="mb-6 flex flex-wrap items-end justify-between gap-x-4 gap-y-3 md:mb-8">
         <h1 className="text-2xl font-extrabold uppercase tracking-tight sm:text-3xl md:text-4xl">{title}</h1>
-        <span className="shrink-0 text-sm text-ink-400">{products.length} товаров</span>
+        <div className="ml-auto flex items-center gap-3">
+          <span className="shrink-0 text-sm text-ink-400">{products.length} товаров</span>
+          <label className="flex items-center gap-2 text-sm">
+            <span className="hidden text-ink-500 sm:inline">Сортировка:</span>
+            <select
+              value={sort}
+              onChange={(e) => setSort(e.target.value)}
+              aria-label="Сортировка товаров"
+              className="h-9 cursor-pointer border hairline bg-white px-3 pr-8 text-sm text-ink-900 outline-none hover:border-ink-900 focus:border-ink-900"
+            >
+              {SORT_OPTIONS.map((o) => (
+                <option key={o.key} value={o.key}>
+                  {o.label}
+                </option>
+              ))}
+            </select>
+          </label>
+        </div>
       </div>
 
       {/* Мобильная кнопка фильтров (десктоп — боковая колонка) */}
