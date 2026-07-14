@@ -7,6 +7,7 @@ import { Badge } from '@/components/ui/Badge';
 import { Button } from '@/components/ui/Button';
 import { ProductPlaceholder } from '@/components/ui/ProductPlaceholder';
 import { discountPercent, formatPrice } from '@/lib/format';
+import { asset } from '@/lib/asset';
 import { useCart } from '@/components/cart/CartProvider';
 import { useFavorites } from '@/components/favorites/FavoritesProvider';
 
@@ -46,7 +47,7 @@ export function ProductCard({ product }: { product: ProductListItem }) {
         <div className="relative aspect-square">
           {product.imageUrl ? (
             // eslint-disable-next-line @next/next/no-img-element
-            <img src={product.imageUrl} alt={product.name} className="h-full w-full object-cover" />
+            <img src={asset(product.imageUrl)} alt={product.name} className="h-full w-full object-cover" />
           ) : (
             <ProductPlaceholder categorySlug={product.categorySlug} className="h-full w-full" />
           )}

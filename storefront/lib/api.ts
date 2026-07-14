@@ -61,7 +61,7 @@ export async function getCategories(): Promise<Category[]> {
 
 // ---- Мок-фильтрация ----
 
-function filterMock(query: ProductsQuery): ProductListItem[] {
+export function filterMock(query: ProductsQuery): ProductListItem[] {
   let list = PRODUCT_LIST.slice();
   if (query.category) {
     const cat = query.category;

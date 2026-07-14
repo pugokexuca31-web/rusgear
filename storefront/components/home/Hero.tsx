@@ -1,4 +1,5 @@
 import { ButtonLink } from '@/components/ui/Button';
+import { asset } from '@/lib/asset';
 
 export function Hero() {
   return (
@@ -10,7 +11,7 @@ export function Hero() {
             за его границы и обрезаются краями блока (overflow-hidden) */}
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
-          src="/manvBJ2.png"
+          src={asset('/manvBJ2.png')}
           alt="Боец в бронежилете RUSGEAR"
           style={{ height: '175%', transform: 'translateY(calc(-50% + 70px))' }}
           className="pointer-events-none absolute right-0 top-1/2 hidden w-auto md:block"

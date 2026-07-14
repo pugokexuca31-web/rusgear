@@ -4,6 +4,7 @@ import { useState } from 'react';
 import type { ProductMedia } from '@/lib/types';
 import { ProductPlaceholder } from '@/components/ui/ProductPlaceholder';
 import { Badge } from '@/components/ui/Badge';
+import { asset } from '@/lib/asset';
 
 export function ProductGallery({
   media,
@@ -27,7 +28,7 @@ export function ProductGallery({
       <div className="relative aspect-square border hairline">
         {current?.url ? (
           // eslint-disable-next-line @next/next/no-img-element
-          <img src={current.url} alt={current.alt || name} className="h-full w-full object-cover" />
+          <img src={asset(current.url)} alt={current.alt || name} className="h-full w-full object-cover" />
         ) : (
           <ProductPlaceholder categorySlug={categorySlug} className="h-full w-full" />
         )}
@@ -51,7 +52,7 @@ export function ProductGallery({
               }`}
             >
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src={m.url} alt={m.alt || `${name} — фото ${i + 1}`} className="h-full w-full object-cover" />
+              <img src={asset(m.url)} alt={m.alt || `${name} — фото ${i + 1}`} className="h-full w-full object-cover" />
             </button>
           ))}
         </div>

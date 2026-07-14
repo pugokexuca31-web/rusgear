@@ -5,6 +5,7 @@ import Image from 'next/image';
 import { useState } from 'react';
 import { usePathname, useRouter } from 'next/navigation';
 import { CATEGORIES } from '@/lib/mock';
+import { asset } from '@/lib/asset';
 import { useCart } from '@/components/cart/CartProvider';
 import { useFavorites } from '@/components/favorites/FavoritesProvider';
 
@@ -36,7 +37,7 @@ export function Header() {
       <div className="container-rg flex h-20 items-center gap-6">
         <Link href="/" className="shrink-0" aria-label="RUSGEAR — на главную">
           <Image
-            src="/logo.png"
+            src={asset('/logo.png')!}
             alt="RUSGEAR"
             width={180}
             height={52}

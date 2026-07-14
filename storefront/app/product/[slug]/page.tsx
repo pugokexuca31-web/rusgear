@@ -2,10 +2,16 @@ import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import type { Metadata } from 'next';
 import { getProduct } from '@/lib/api';
+import { PRODUCTS } from '@/lib/mock';
 import { ProductGallery } from '@/components/product/ProductGallery';
 import { ProductDescription } from '@/components/product/ProductDescription';
 import { ProductPurchase } from '@/components/product/ProductPurchase';
 import { discountPercent } from '@/lib/format';
+
+// Статический экспорт: перечисляем все slug'и, чтобы Next отрендерил страницы заранее.
+export function generateStaticParams() {
+  return PRODUCTS.map((p) => ({ slug: p.slug }));
+}
 
 export async function generateMetadata({
   params,

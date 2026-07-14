@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { CATEGORIES } from '@/lib/mock';
+import { asset } from '@/lib/asset';
 
 export function Footer() {
   return (
@@ -8,7 +9,7 @@ export function Footer() {
       <div className="container-rg grid gap-10 py-14 md:grid-cols-3">
         <div>
           <Image
-            src="/logo.png"
+            src={asset('/logo.png')!}
             alt="RUSGEAR"
             width={200}
             height={58}
