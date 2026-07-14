@@ -4,17 +4,33 @@
  * Реальный контент/фото берутся с OZON: https://www.ozon.ru/seller/rusgear/
  * Цены — в копейках.
  */
-import type { Category, Product, ProductListItem } from './types';
+import type { Brand, Category, Product, ProductListItem } from './types';
 
 export const CATEGORIES: Category[] = [
-  { slug: 'bronejilety', name: 'Бронежилеты' },
-  { slug: 'broneplity', name: 'Бронеплиты' },
-  { slug: 'chehly', name: 'Чехлы' },
-  { slug: 'sumki', name: 'Сумки' },
-  { slug: 'ekipirovka', name: 'Экипировка' },
+  { slug: 'bronejilet', name: 'Бронежилет' },
+  { slug: 'podsumok', name: 'Подсумок' },
+  { slug: 'plastina', name: 'Пластина для бронежилета' },
+  { slug: 'razgruzochnaya-sistema', name: 'Разгрузочная система' },
+  { slug: 'perehodnik', name: 'Переходник для бронежилета' },
+  { slug: 'ryukzak', name: 'Рюкзак' },
+  { slug: 'zashchita-shei-plech', name: 'Защита шеи, плеч к бронежилету' },
+  { slug: 'protivooskolochnyy-paket', name: 'Противоосколочный пакет' },
+  { slug: 'zashchita-paha', name: 'Защита паха' },
+  { slug: 'broneshlem', name: 'Бронешлем' },
 ];
 
-const BRAND = { slug: 'rusgear', name: 'RUSGEAR' };
+/**
+ * Бренды витрины. RUSGEAR — мультибренд-магазин (см. CLAUDE.md §6), поэтому в
+ * ассортименте несколько брендов. Список — плейсхолдер, финал берётся с OZON /
+ * из CMS платформы (GET /brands). При сращивании фильтр пойдёт в API как brandId.
+ */
+export const BRANDS: Brand[] = [
+  { slug: 'rusgear', name: 'RUSGEAR' },
+  { slug: 'sso', name: 'ССО' },
+];
+
+const BRAND = BRANDS[0];
+const BRAND_SSO = BRANDS[1];
 
 // Размерные варианты для носимых изделий
 function sizeVariants(basePrice: number) {
@@ -145,9 +161,9 @@ RUSGEAR — мультибренд профессиональной экипир
     compareAtPrice: '3600000',
     onSale: true,
     isFeatured: true,
-    brand: BRAND,
-    categories: ['bronejilety'],
-    categorySlug: 'bronejilety',
+    brand: BRAND_SSO,
+    categories: ['bronejilet'],
+    categorySlug: 'bronejilet',
     attributes: {
       'Тип': 'Бронежилет',
       'Страна-изготовитель': 'Россия',
@@ -183,8 +199,8 @@ RUSGEAR — мультибренд профессиональной экипир
     isNew: true,
     isFeatured: true,
     brand: BRAND,
-    categories: ['bronejilety', 'skrytogo-nosheniya'],
-    categorySlug: 'bronejilety',
+    categories: ['bronejilet'],
+    categorySlug: 'bronejilet',
     attributes: { 'Класс защиты': 'БР1', 'Вес': '2.1 кг', 'Материал': 'Арамид' },
     variants: sizeVariants(1890000),
     inStock: true,
@@ -201,8 +217,8 @@ RUSGEAR — мультибренд профессиональной экипир
     compareAtPrice: '1490000',
     onSale: true,
     brand: BRAND,
-    categories: ['broneplity'],
-    categorySlug: 'broneplity',
+    categories: ['plastina'],
+    categorySlug: 'plastina',
     attributes: { 'Класс защиты': 'БР4', 'Вес': '2.6 кг', 'Форм-фактор': 'SAPI M' },
     inStock: true,
     availableQty: 50,
@@ -217,8 +233,8 @@ RUSGEAR — мультибренд профессиональной экипир
     price: '1790000',
     isNew: true,
     brand: BRAND,
-    categories: ['broneplity'],
-    categorySlug: 'broneplity',
+    categories: ['plastina'],
+    categorySlug: 'plastina',
     attributes: { 'Класс защиты': 'БР5', 'Вес': '1.4 кг', 'Материал': 'СВМПЭ' },
     inStock: true,
     availableQty: 42,
@@ -233,8 +249,8 @@ RUSGEAR — мультибренд профессиональной экипир
     price: '890000',
     isFeatured: true,
     brand: BRAND,
-    categories: ['plitonoski'],
-    categorySlug: 'plitonoski',
+    categories: ['razgruzochnaya-sistema'],
+    categorySlug: 'razgruzochnaya-sistema',
     attributes: { 'Система': 'MOLLE', 'Вес': '1.2 кг', 'Материал': 'Cordura 1000D' },
     variants: [
       { id: 'black', sku: 'PN-BLK', name: 'Чёрный', attributes: { 'Цвет': 'Чёрный' }, price: '890000', inStock: true, availableQty: 30 },
@@ -255,8 +271,8 @@ RUSGEAR — мультибренд профессиональной экипир
     compareAtPrice: '2790000',
     onSale: true,
     brand: BRAND,
-    categories: ['shlemy'],
-    categorySlug: 'shlemy',
+    categories: ['broneshlem'],
+    categorySlug: 'broneshlem',
     attributes: { 'Класс защиты': 'БР1', 'Вес': '1.5 кг', 'Тип': 'FAST High Cut' },
     inStock: true,
     availableQty: 15,
@@ -271,8 +287,8 @@ RUSGEAR — мультибренд профессиональной экипир
     price: '390000',
     isNew: true,
     brand: BRAND,
-    categories: ['aksessuary'],
-    categorySlug: 'aksessuary',
+    categories: ['zashchita-shei-plech'],
+    categorySlug: 'zashchita-shei-plech',
     attributes: { 'Класс защиты': 'С2', 'Вес': '0.4 кг' },
     inStock: true,
     availableQty: 60,
@@ -377,9 +393,9 @@ RUSGEAR — мультибренд профессиональной экипир
 
 Выбор тех, кому важны надёжность, функциональность и результат.`,
     price: '398000',
-    brand: BRAND,
-    categories: ['sumki'],
-    categorySlug: 'sumki',
+    brand: BRAND_SSO,
+    categories: ['podsumok'],
+    categorySlug: 'podsumok',
     attributes: {
       'Тип': 'Подсумок',
       'Длина, см': '10',
@@ -424,8 +440,8 @@ RUSGEAR — мультибренд профессиональной экипир
     price: '3690000',
     isFeatured: true,
     brand: BRAND,
-    categories: ['bronejilety', 'shturmovye'],
-    categorySlug: 'bronejilety',
+    categories: ['bronejilet'],
+    categorySlug: 'bronejilet',
     attributes: { 'Класс защиты': 'БР4', 'Вес': '7.2 кг', 'Материал': 'Керамика' },
     variants: sizeVariants(3690000),
     inStock: true,
@@ -442,8 +458,8 @@ RUSGEAR — мультибренд профессиональной экипир
     compareAtPrice: '740000',
     onSale: true,
     brand: BRAND,
-    categories: ['broneplity'],
-    categorySlug: 'broneplity',
+    categories: ['plastina'],
+    categorySlug: 'plastina',
     attributes: { 'Класс защиты': 'БР4', 'Вес': '0.9 кг' },
     inStock: true,
     availableQty: 40,
@@ -458,8 +474,8 @@ RUSGEAR — мультибренд профессиональной экипир
     price: '590000',
     isNew: true,
     brand: BRAND,
-    categories: ['plitonoski'],
-    categorySlug: 'plitonoski',
+    categories: ['razgruzochnaya-sistema'],
+    categorySlug: 'razgruzochnaya-sistema',
     attributes: { 'Вес': '0.7 кг', 'Материал': 'Нейлон' },
     inStock: true,
     availableQty: 22,
@@ -473,8 +489,8 @@ RUSGEAR — мультибренд профессиональной экипир
       'Общевойсковой защитный шлем класса БР2. Проверенная конструкция, полное покрытие головы, амортизирующий подпор.',
     price: '1990000',
     brand: BRAND,
-    categories: ['shlemy'],
-    categorySlug: 'shlemy',
+    categories: ['broneshlem'],
+    categorySlug: 'broneshlem',
     attributes: { 'Класс защиты': 'БР2', 'Вес': '2.3 кг' },
     inStock: false,
     availableQty: 0,
@@ -494,8 +510,55 @@ function toListItem(p: Product): ProductListItem {
     imageUrl: p.media?.[0]?.url ?? null,
     inStock: p.inStock,
     availableQty: p.availableQty,
+    variants: p.variants,
     categorySlug: p.categorySlug,
   };
 }
 
 export const PRODUCT_LIST: ProductListItem[] = PRODUCTS.map(toListItem);
+
+// ---- Атрибутные фильтры (цвет, размер) ----
+// Значения живут в вариантах (и иногда в attributes товара). Собираем справочник
+// опций и карту slug→ключи для фильтрации. Ключ — регистронезависимый (Atacs-FG /
+// ATACS-FG считаем одним цветом). Список финализируется по OZON / CMS платформы.
+
+export interface FilterOption {
+  key: string; // нормализованный ключ (lowercase)
+  label: string; // отображаемое название (первое встреченное написание)
+}
+
+function collectAttr(p: Product, attr: string): string[] {
+  const vals: string[] = [];
+  const top = p.attributes?.[attr];
+  if (top) vals.push(top);
+  p.variants?.forEach((v) => {
+    const val = v.attributes?.[attr];
+    if (val) vals.push(val);
+  });
+  return vals;
+}
+
+function buildOptions(attr: string): FilterOption[] {
+  const seen = new Map<string, string>();
+  PRODUCTS.forEach((p) =>
+    collectAttr(p, attr).forEach((raw) => {
+      const key = raw.trim().toLowerCase();
+      if (!seen.has(key)) seen.set(key, raw.trim());
+    }),
+  );
+  return [...seen].map(([key, label]) => ({ key, label }));
+}
+
+function buildKeyMap(attr: string): Map<string, Set<string>> {
+  return new Map(
+    PRODUCTS.map((p) => [
+      p.slug,
+      new Set(collectAttr(p, attr).map((v) => v.trim().toLowerCase())),
+    ]),
+  );
+}
+
+export const COLORS: FilterOption[] = buildOptions('Цвет');
+export const SIZES: FilterOption[] = buildOptions('Размер');
+export const PRODUCT_COLOR_KEYS = buildKeyMap('Цвет');
+export const PRODUCT_SIZE_KEYS = buildKeyMap('Размер');

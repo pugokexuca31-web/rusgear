@@ -19,12 +19,12 @@ const FEATURES = [
 
 export function Features() {
   return (
-    <section className="container-rg py-16">
-      <div className="grid gap-px bg-ink-200 md:grid-cols-4">
+    <section className="container-rg py-10 md:py-16">
+      <div className="grid gap-px bg-ink-200 sm:grid-cols-2 md:grid-cols-4">
         {FEATURES.map((f, i) => (
           <div
             key={f.title}
-            className={`bg-white py-8 md:px-8 ${i === 0 ? 'md:pl-0' : ''} ${
+            className={`bg-white py-6 md:py-8 md:px-8 ${i === 0 ? 'md:pl-0' : ''} ${
               i === FEATURES.length - 1 ? 'md:pr-0' : ''
             }`}
           >

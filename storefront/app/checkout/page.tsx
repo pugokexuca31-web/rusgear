@@ -15,6 +15,7 @@ import { formatPrice } from '@/lib/format';
 export default function CheckoutPage() {
   const { items, subtotal, clear } = useCart();
   const [placed, setPlaced] = useState(false);
+  const [promo, setPromo] = useState('');
 
   if (placed) {
     return (
@@ -99,6 +100,21 @@ export default function CheckoutPage() {
               </li>
             ))}
           </ul>
+          <div className="mt-5 border-t hairline pt-4">
+            <label className="text-xs font-bold uppercase tracking-widest text-ink-500">Промокод</label>
+            <div className="mt-2 flex gap-2">
+              <input
+                value={promo}
+                onChange={(e) => setPromo(e.target.value)}
+                placeholder="Введите промокод"
+                className={`${input} h-11 flex-1 uppercase`}
+              />
+              <Button type="button" variant="outline" className="h-11 shrink-0 px-4">Применить</Button>
+            </div>
+            <p className="mt-2 text-xs text-ink-400">
+              Скидку по промокоду рассчитает система при оформлении.
+            </p>
+          </div>
           <div className="mt-5 flex items-baseline justify-between border-t hairline pt-4">
             <span className="text-sm font-bold uppercase">Итого</span>
             <span className="font-heading text-2xl font-extrabold">{formatPrice(subtotal)}</span>

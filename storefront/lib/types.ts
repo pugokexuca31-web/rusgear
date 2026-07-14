@@ -23,6 +23,8 @@ export interface ProductListItem {
   imageUrl?: string | null;
   inStock: boolean;
   availableQty?: number;
+  // Варианты (цвет/размер) — чтобы из карточки каталога можно было выбрать параметр
+  variants?: ProductVariant[];
   // Локальная витринная мета для плейсхолдера-картинки
   categorySlug?: string;
 }
@@ -87,9 +89,16 @@ export interface ProductsQuery {
   q?: string;
   category?: string;
   brandId?: string;
+  /** Мульти-выбор брендов на витрине (по slug). При сращивании → повтор brandId. */
+  brands?: string[];
+  /** Мульти-выбор цветов (нормализованный ключ, lowercase). */
+  colors?: string[];
+  /** Мульти-выбор размеров (нормализованный ключ, lowercase). */
+  sizes?: string[];
   featured?: boolean;
   new?: boolean;
   sale?: boolean;
+  inStock?: boolean;
   limit?: number;
   offset?: number;
 }

@@ -3,7 +3,7 @@ import { asset } from '@/lib/asset';
 
 export function Hero() {
   return (
-    <section className="container-rg pb-8">
+    <section className="mx-auto w-full max-w-content pb-8 md:px-6 lg:px-10">
       <div className="relative overflow-hidden bg-ink-950 text-white">
         <div className="absolute -right-40 top-0 h-full w-2/3 bg-gradient-to-l from-ink-950/40 to-transparent" />
 
@@ -31,6 +31,15 @@ export function Hero() {
             </div>
           </div>
         </div>
+
+        {/* Мобильная версия: изображение снизу под кнопкой, во всю ширину блока,
+            ~половина его высоты, обрезано сверху и снизу (object-cover). */}
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
+          src={asset('/manvBJ2.png')}
+          alt="Боец в бронежилете RUSGEAR"
+          className="pointer-events-none relative block h-52 w-full object-cover object-[50%_22%] md:hidden"
+        />
       </div>
     </section>
   );

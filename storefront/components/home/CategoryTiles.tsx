@@ -6,6 +6,15 @@ export function CategoryTiles({ categories }: { categories: Category[] }) {
   if (categories.length === 0) return null;
   return (
     <section className="container-rg pt-8 pb-16">
+      <div className="mb-6 flex items-end justify-between border-b hairline pb-4 md:mb-8">
+        <h2 className="text-2xl font-extrabold uppercase tracking-tight md:text-3xl">Категории</h2>
+        <Link
+          href="/catalog"
+          className="text-xs font-semibold uppercase tracking-wide text-ink-500 hover:text-accent-red"
+        >
+          Все категории →
+        </Link>
+      </div>
       <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-5">
         {categories.map((c) => (
           <Link

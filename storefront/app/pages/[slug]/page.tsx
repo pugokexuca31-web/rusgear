@@ -2,6 +2,7 @@ import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import type { Metadata } from 'next';
 import { STATIC_PAGES } from '@/lib/pages';
+import { ContactForm } from '@/components/pages/ContactForm';
 
 export function generateStaticParams() {
   return Object.keys(STATIC_PAGES).map((slug) => ({ slug }));
@@ -29,11 +30,28 @@ export default async function ContentPage({ params }: { params: Promise<{ slug: 
         <span className="text-ink-700">{page.title}</span>
       </nav>
       <h1 className="mb-8 text-3xl font-extrabold uppercase tracking-tight md:text-4xl">{page.title}</h1>
-      <div className="max-w-3xl space-y-5 text-base leading-relaxed text-ink-600">
-        {page.body.map((p, i) => (
-          <p key={i}>{p}</p>
-        ))}
-      </div>
+
+      {slug === 'kontakty' ? (
+        <div className="grid gap-12 lg:grid-cols-2">
+          <div className="space-y-5 text-base leading-relaxed text-ink-600">
+            {page.body.map((p, i) => (
+              <p key={i}>{p}</p>
+            ))}
+          </div>
+          <div>
+            <h2 className="mb-4 text-xs font-bold uppercase tracking-widest text-ink-500">
+              Напишите нам
+            </h2>
+            <ContactForm />
+          </div>
+        </div>
+      ) : (
+        <div className="max-w-3xl space-y-5 text-base leading-relaxed text-ink-600">
+          {page.body.map((p, i) => (
+            <p key={i}>{p}</p>
+          ))}
+        </div>
+      )}
     </div>
   );
 }

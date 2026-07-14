@@ -34,7 +34,7 @@ export function Header() {
   return (
     <header className="sticky top-0 z-40 bg-brand-dark/95 text-white backdrop-blur">
       {/* Основная строка */}
-      <div className="container-rg flex h-20 items-center gap-6">
+      <div className="container-rg flex h-16 items-center gap-3 md:h-20 md:gap-6">
         <Link href="/" className="shrink-0" aria-label="RUSGEAR — на главную">
           <Image
             src={asset('/logo.png')!}
@@ -42,7 +42,7 @@ export function Header() {
             width={180}
             height={52}
             priority
-            className="h-11 w-auto"
+            className="h-9 w-auto md:h-11"
           />
         </Link>
 
@@ -60,7 +60,7 @@ export function Header() {
           </div>
         </form>
 
-        <nav className="flex items-center gap-5">
+        <nav className="ml-auto flex items-center gap-4 md:ml-0 md:gap-5">
           <Link href="/account" className="flex items-center text-white hover:text-accent-red" aria-label="Личный кабинет" title="Личный кабинет">
             <UserIcon />
           </Link>
@@ -108,6 +108,20 @@ export function Header() {
       {menuOpen && (
         <div className="border-t border-white/10 md:hidden">
           <div className="container-rg flex flex-col py-3">
+            <form
+              onSubmit={(e) => { onSearch(e); setMenuOpen(false); }}
+              className="mb-3 flex items-center border border-white/40 focus-within:border-white"
+            >
+              <input
+                name="q"
+                placeholder="Поиск по каталогу…"
+                className="h-11 w-full bg-transparent px-4 text-sm text-white outline-none placeholder:text-white/60"
+                aria-label="Поиск по каталогу"
+              />
+              <button type="submit" className="flex h-11 w-11 items-center justify-center text-white hover:text-accent-red" aria-label="Найти">
+                <SearchIcon />
+              </button>
+            </form>
             <Link href="/catalog" className="py-2 text-sm font-semibold uppercase text-white" onClick={() => setMenuOpen(false)}>
               Весь каталог
             </Link>
@@ -132,6 +146,9 @@ export function Header() {
                   {l.label}
                 </Link>
               ))}
+              <a href="tel:+70000000000" className="block py-2 text-sm font-semibold uppercase text-accent-red">
+                +7 (000) 000-00-00
+              </a>
             </div>
           </div>
         </div>

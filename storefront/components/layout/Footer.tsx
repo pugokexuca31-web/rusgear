@@ -44,7 +44,7 @@ export function Footer() {
       <div className="border-t border-white/10">
         <div className="container-rg flex flex-col items-start justify-between gap-2 py-5 text-xs text-white/60 md:flex-row md:items-center">
           <span>© {new Date().getFullYear()} RUSGEAR. Все права защищены.</span>
-          <span>Реквизиты и политика — уточняются</span>
+          <span>ИП Рязанов Сергей Николаевич · ОГРНИП: 322169000213981 · ИНН: 165049520385</span>
         </div>
       </div>
     </footer>

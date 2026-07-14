@@ -5,11 +5,16 @@
 type Shape = 'vest' | 'plate' | 'carrier' | 'helmet' | 'gear';
 
 const SHAPE_BY_CATEGORY: Record<string, Shape> = {
-  bronejilety: 'vest',
-  broneplity: 'plate',
-  chehly: 'carrier',
-  sumki: 'gear',
-  ekipirovka: 'helmet',
+  bronejilet: 'vest',
+  podsumok: 'gear',
+  plastina: 'plate',
+  'razgruzochnaya-sistema': 'carrier',
+  perehodnik: 'gear',
+  ryukzak: 'gear',
+  'zashchita-shei-plech': 'vest',
+  'protivooskolochnyy-paket': 'plate',
+  'zashchita-paha': 'plate',
+  broneshlem: 'helmet',
 };
 
 function Silhouette({ shape }: { shape: Shape }) {

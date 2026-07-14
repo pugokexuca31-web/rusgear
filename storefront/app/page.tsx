@@ -14,7 +14,8 @@ export default async function HomePage() {
   return (
     <>
       <Hero />
-      <CategoryTiles categories={categories} />
+      {/* На главной показываем первые категории; полный список — в каталоге */}
+      <CategoryTiles categories={categories.slice(0, 5)} />
       <ProductRail title="Хиты продаж" products={featured} href="/catalog?featured=1" />
       <ProductRail title="Новинки" products={fresh} href="/catalog?new=1" />
       <Features />

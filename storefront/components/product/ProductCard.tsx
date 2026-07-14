@@ -2,9 +2,10 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
-import type { ProductListItem } from '@/lib/types';
+import type { ProductListItem, ProductVariant } from '@/lib/types';
 import { Badge } from '@/components/ui/Badge';
 import { Button } from '@/components/ui/Button';
+import { Modal } from '@/components/ui/Modal';
 import { ProductPlaceholder } from '@/components/ui/ProductPlaceholder';
 import { discountPercent, formatPrice } from '@/lib/format';
 import { asset } from '@/lib/asset';
@@ -18,15 +19,39 @@ export function ProductCard({ product }: { product: ProductListItem }) {
   const [added, setAdded] = useState(false);
   const isFav = has(product.slug);
 
-  function handleAdd() {
+  const variants = product.variants ?? [];
+  const optionLabel = Object.keys(variants[0]?.attributes ?? {})[0] || 'Вариант';
+  const [pickerOpen, setPickerOpen] = useState(false);
+  const [pendingId, setPendingId] = useState<string | undefined>();
+
+  function addToCart(variant?: ProductVariant) {
     add({
       slug: product.slug,
+      variantId: variant?.id,
       name: product.name,
-      price: product.price,
+      variantName: variant?.name,
+      price: variant?.price ?? product.price,
       categorySlug: product.categorySlug,
     });
     setAdded(true);
     setTimeout(() => setAdded(false), 1600);
+  }
+
+  function handleAdd() {
+    // Если есть выбор цвета/размера — сначала спрашиваем параметр
+    if (variants.length > 0) {
+      setPendingId(variants.find((v) => v.inStock)?.id ?? variants[0].id);
+      setPickerOpen(true);
+      return;
+    }
+    addToCart();
+  }
+
+  function confirmPick() {
+    const variant = variants.find((v) => v.id === pendingId);
+    if (!variant) return;
+    addToCart(variant);
+    setPickerOpen(false);
   }
 
   return (
@@ -59,7 +84,7 @@ export function ProductCard({ product }: { product: ProductListItem }) {
         </div>
 
         <div className="flex flex-1 flex-col p-4">
-          <h3 className="text-sm font-semibold uppercase leading-snug text-ink-900 group-hover:text-accent-red">
+          <h3 className="line-clamp-3 min-h-[3.75rem] text-sm font-semibold uppercase leading-snug text-ink-900 group-hover:text-accent-red">
             {product.name}
           </h3>
           <div className="mt-auto flex items-baseline gap-2 pt-4">
@@ -85,6 +110,32 @@ export function ProductCard({ product }: { product: ProductListItem }) {
           {!product.inStock ? 'Нет в наличии' : added ? 'Добавлено ✓' : 'В корзину'}
         </Button>
       </div>
+
+      <Modal open={pickerOpen} onClose={() => setPickerOpen(false)} title={`Выберите: ${optionLabel.toLowerCase()}`}>
+        <p className="mb-4 text-sm text-ink-600">{product.name}</p>
+        <div className="mb-6 flex flex-wrap gap-2">
+          {variants.map((v) => {
+            const label = Object.values(v.attributes ?? {})[0] ?? v.name;
+            const active = v.id === pendingId;
+            return (
+              <button
+                key={v.id}
+                type="button"
+                onClick={() => setPendingId(v.id)}
+                disabled={!v.inStock}
+                className={`min-w-14 border px-4 py-2 text-sm font-semibold uppercase transition-colors
+                  ${active ? 'border-ink-900 bg-ink-900 text-white' : 'border-ink-300 text-ink-800 hover:border-ink-900'}
+                  ${!v.inStock ? 'cursor-not-allowed opacity-40 line-through' : ''}`}
+              >
+                {label}
+              </button>
+            );
+          })}
+        </div>
+        <Button size="lg" onClick={confirmPick} className="w-full">
+          В корзину
+        </Button>
+      </Modal>
     </div>
   );
 }

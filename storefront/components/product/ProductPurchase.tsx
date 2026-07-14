@@ -6,12 +6,26 @@ import { Button } from '@/components/ui/Button';
 import { formatPrice } from '@/lib/format';
 import { useCart } from '@/components/cart/CartProvider';
 
-export function ProductPurchase({ product }: { product: Product }) {
+export function ProductPurchase({
+  product,
+  variantId: controlledVariantId,
+  onVariantChange,
+}: {
+  product: Product;
+  /** Управляемый выбор варианта (если родитель делит состояние с галереей). */
+  variantId?: string;
+  onVariantChange?: (id: string) => void;
+}) {
   const { add } = useCart();
   const variants = product.variants ?? [];
-  const [variantId, setVariantId] = useState<string | undefined>(
+  const [internalVariantId, setInternalVariantId] = useState<string | undefined>(
     variants.find((v) => v.inStock)?.id ?? variants[0]?.id,
   );
+  const variantId = controlledVariantId ?? internalVariantId;
+  const setVariantId = (id: string) => {
+    setInternalVariantId(id);
+    onVariantChange?.(id);
+  };
   const [qty, setQty] = useState(1);
   const [added, setAdded] = useState(false);
 

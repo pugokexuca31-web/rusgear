@@ -13,8 +13,8 @@ export function ProductRail({
 }) {
   if (products.length === 0) return null;
   return (
-    <section className="container-rg py-16">
-      <div className="mb-8 flex items-end justify-between border-b hairline pb-4">
+    <section className="container-rg py-10 md:py-16">
+      <div className="mb-6 flex items-end justify-between border-b hairline pb-4 md:mb-8">
         <h2 className="text-2xl font-extrabold uppercase tracking-tight md:text-3xl">{title}</h2>
         <Link
           href={href}
